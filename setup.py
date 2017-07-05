@@ -364,11 +364,11 @@ if setupdir:
 
 setup_requires = []
 if not os.path.exists(_get_interop_filename()):
-    setup_requires.append("pycparser")
+    setup_requires.append("pycparser").append("PYTHON_WITHOUT_ENABLE_SHARED")
 
 setup(
     name="pythonnet",
-    version="2.4.0.dev1",
+    version="2.4.0.dev2",
     description=".Net and Mono integration for Python",
     url='https://pythonnet.github.io/',
     license='MIT',
