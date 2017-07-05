@@ -169,7 +169,7 @@ class BuildExtPythonnet(build_ext.build_ext):
             defines.append("MONO_OSX" if on_darwin else "MONO_LINUX")
 
             # Check if --enable-shared was set when Python was built
-            enable_shared = False #sysconfig.get_config_var("Py_ENABLE_SHARED")
+            enable_shared = sysconfig.get_config_var("Py_ENABLE_SHARED")
             if enable_shared:
                 # Double-check if libpython is linked dynamically with python
                 ldd_cmd = ["otool", "-L"] if on_darwin else ["ldd"]
@@ -180,6 +180,7 @@ class BuildExtPythonnet(build_ext.build_ext):
             if not enable_shared:
                 defines.append("PYTHON_WITHOUT_ENABLE_SHARED")
 
+	    defines.append("PYTHON_WITHOUT_ENABLE_SHARED")
         if hasattr(sys, "abiflags"):
             if "d" in sys.abiflags:
                 defines.append("PYTHON_WITH_PYDEBUG")
@@ -368,7 +369,7 @@ if not os.path.exists(_get_interop_filename()):
 
 setup(
     name="pythonnet",
-    version="2.4.0.dev2",
+    version="2.4.0.dev3",
     description=".Net and Mono integration for Python",
     url='https://pythonnet.github.io/',
     license='MIT',
