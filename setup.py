@@ -21,7 +21,7 @@ from setuptools import Extension, setup
 # Allow config/verbosity to be set from cli
 # http://stackoverflow.com/a/4792601/5208670
 CONFIG = "Release"  # Release or Debug
-VERBOSITY = "minimal"  # quiet, minimal, normal, detailed, diagnostic
+VERBOSITY = "detailed"  # quiet, minimal, normal, detailed, diagnostic
 
 is_64bits = sys.maxsize > 2**32
 DEVTOOLS = "MsDev" if sys.platform == "win32" else "Mono"
@@ -371,7 +371,7 @@ if not os.path.exists(_get_interop_filename()):
 
 setup(
     name="pythonnet",
-    version="2.4.0.dev4",
+    version="2.4.0.dev5",
     description=".Net and Mono integration for Python",
     url='https://pythonnet.github.io/',
     license='MIT',
