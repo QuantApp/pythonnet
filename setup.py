@@ -169,7 +169,7 @@ class BuildExtPythonnet(build_ext.build_ext):
             defines.append("MONO_OSX" if on_darwin else "MONO_LINUX")
 
             # Check if --enable-shared was set when Python was built
-            enable_shared = sysconfig.get_config_var("Py_ENABLE_SHARED")
+            enable_shared = False #sysconfig.get_config_var("Py_ENABLE_SHARED")
             if enable_shared:
                 # Double-check if libpython is linked dynamically with python
                 ldd_cmd = ["otool", "-L"] if on_darwin else ["ldd"]
@@ -364,7 +364,7 @@ if setupdir:
 
 setup_requires = []
 if not os.path.exists(_get_interop_filename()):
-    setup_requires.append("pycparser").append("PYTHON_WITHOUT_ENABLE_SHARED")
+    setup_requires.append("pycparser")
 
 setup(
     name="pythonnet",
