@@ -20,7 +20,7 @@ from setuptools import Extension, setup
 
 # Allow config/verbosity to be set from cli
 # http://stackoverflow.com/a/4792601/5208670
-CONFIG = "Release"  # Release or Debug
+CONFIG = "Debug"  # Release or Debug
 VERBOSITY = "detailed"  # quiet, minimal, normal, detailed, diagnostic
 
 is_64bits = sys.maxsize > 2**32
@@ -179,10 +179,7 @@ class BuildExtPythonnet(build_ext.build_ext):
 
             if not enable_shared:
                 defines.append("PYTHON_WITHOUT_ENABLE_SHARED")
-
-            defines.append("PYTHON_WITHOUT_ENABLE_SHARED")
-            print('DEFINES!')
-            print(defines)
+            
         if hasattr(sys, "abiflags"):
             if "d" in sys.abiflags:
                 defines.append("PYTHON_WITH_PYDEBUG")
@@ -371,7 +368,7 @@ if not os.path.exists(_get_interop_filename()):
 
 setup(
     name="pythonnet",
-    version="2.4.0.dev5",
+    version="2.4.0.dev6",
     description=".Net and Mono integration for Python",
     url='https://pythonnet.github.io/',
     license='MIT',
