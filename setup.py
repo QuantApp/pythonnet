@@ -368,7 +368,7 @@ if not os.path.exists(_get_interop_filename()):
 
 setup(
     name="pythonnet",
-    version="2.4.0.dev0",
+    version="2.4.0.dev1",
     description=".Net and Mono integration for Python",
     url='https://pythonnet.github.io/',
     license='MIT',
