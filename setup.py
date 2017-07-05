@@ -181,6 +181,8 @@ class BuildExtPythonnet(build_ext.build_ext):
                 defines.append("PYTHON_WITHOUT_ENABLE_SHARED")
 
             defines.append("PYTHON_WITHOUT_ENABLE_SHARED")
+            print('DEFINES!')
+            print(defines)
         if hasattr(sys, "abiflags"):
             if "d" in sys.abiflags:
                 defines.append("PYTHON_WITH_PYDEBUG")
