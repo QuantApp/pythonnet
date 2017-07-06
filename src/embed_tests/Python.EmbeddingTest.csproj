@@ -9,7 +9,7 @@
     <RootNamespace>Python.EmbeddingTest</RootNamespace>
     <DocumentationFile>bin\Python.EmbeddingTest.xml</DocumentationFile>
     <OutputPath>bin\</OutputPath>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <NoWarn>1591</NoWarn>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
